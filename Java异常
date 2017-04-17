@@ -1,0 +1,50 @@
+
+
+class MysExceptions extends Exception
+
+       {
+    		/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6618894462844495422L;
+			private int detail;
+    		MysExceptions(int a)
+    		{
+    			detail=a;
+    			
+    		}
+
+    		 public String ToString()
+    		 {
+    			 return "Myexceptions["+detail+"]";
+    		 }
+	
+       }
+
+public class MyExcepions {
+
+	static void compute(int a) throws MysExceptions{
+		
+		System.out.println("Called computer ("+ a+ ")");
+		if(a>10)
+			throw new MysExceptions(a);
+		System.out.println("Normal exit");
+	}
+	
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+
+		try {
+			compute(1);
+			compute(20);
+			
+		}
+		catch(MysExceptions e)
+		{
+			System.out.println("Caught "+ e);
+		}
+		
+	}
+
+}
+      
